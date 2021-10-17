@@ -1,11 +1,6 @@
 public class Book {
     private int bookID;
-    private String title;
-
-//    public Book(int bookID, String title){
-//        this.bookID = bookID;
-//        this.title = title;
-//    }
+    private String bookTitle;
 
     public int getBookID() {
         return bookID;
@@ -15,19 +10,19 @@ public class Book {
         this.bookID = bookID;
     }
 
-    public String getTitle() {
-        return title;
+    public String getBookTitle() {
+        return bookTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
     }
 
     @Override
     public String toString() {
         return "Book{" +
                 "bookID=" + bookID +
-                ", title='" + title + '\'' +
+                ", title='" + bookTitle + '\'' +
                 '}';
     }
 }

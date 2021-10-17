@@ -1,14 +1,12 @@
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {
-        BookShop shopA = new BookShop();
-        shopA.setShopname("Shop A");
-        shopA.loadData();
+        BookShop bookShopA = new BookShop();
+        bookShopA.setShopname("Shop A");
+        bookShopA.loadData();
 
-        BookShop shopB = shopA.clone();
+        BookShop bookShopB = bookShopA.clone();
 
-        shopA.books.remove(0);
-
-        System.out.println("Shop A\n" + shopA.getBooks());
-        System.out.println("\nShop B\n" + shopB.getBooks());
+        System.out.println("Shop A\n" + bookShopA.getBooks());
+        System.out.println("\nShop B\n" + bookShopB.getBooks());
     }
 }

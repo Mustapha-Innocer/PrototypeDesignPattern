@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class BookShop implements Cloneable{
     private String shopname;
@@ -23,7 +22,7 @@ public class BookShop implements Cloneable{
         for (int id=1; id <= 5; id++){
             Book book = new Book();
             book.setBookID(id);
-            book.setTitle("Book " + id);
+            book.setBookTitle("Book " + id);
             books.add(book);
         }
     }
@@ -39,11 +38,7 @@ public class BookShop implements Cloneable{
     @Override
     protected BookShop clone() throws CloneNotSupportedException {
         BookShop bookShop = new BookShop();
-        bookShop.books = this.books.stream().map(book -> book).collect(Collectors.toList());
-//        bookShop.books.addAll(this.getBooks());
-//        for (Book book : this.books){
-//            bookShop.books.add(book);
-//        }
+        bookShop.books.addAll(this.getBooks());
         return bookShop;
     }
 }
