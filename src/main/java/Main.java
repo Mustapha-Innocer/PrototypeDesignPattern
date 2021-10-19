@@ -5,8 +5,9 @@ public class Main {
         bookShopA.loadData();
 
         BookShop bookShopB = bookShopA.clone();
+        bookShopB.setShopname("Shop B");
 
-        System.out.println("Shop A\n" + bookShopA.getBooks());
-        System.out.println("\nShop B\n" + bookShopB.getBooks());
+        System.out.println("Shop A\n" + bookShopA.getBookList());
+        System.out.println("\nShop B\n" + bookShopB.getBookList());
     }
 }

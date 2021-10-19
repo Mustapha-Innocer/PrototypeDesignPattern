@@ -3,7 +3,11 @@ import java.util.List;
 
 public class BookShop implements Cloneable{
     private String shopname;
-    List<Book> books = new ArrayList<>();
+    private List<Book> bookList = new ArrayList<>();
+
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
+    }
 
     public String getShopname() {
         return shopname;
@@ -13,8 +17,8 @@ public class BookShop implements Cloneable{
         this.shopname = shopname;
     }
 
-    public List<Book> getBooks() {
-        return books;
+    public List<Book> getBookList() {
+        return bookList;
     }
 
 
@@ -23,7 +27,7 @@ public class BookShop implements Cloneable{
             Book book = new Book();
             book.setBookID(id);
             book.setBookTitle("Book " + id);
-            books.add(book);
+            bookList.add(book);
         }
     }
 
@@ -31,14 +35,14 @@ public class BookShop implements Cloneable{
     public String toString() {
         return "BookShop{" +
                 "shopename='" + shopname + '\'' +
-                ", books=" + books +
+                ", books=" + bookList +
                 '}';
     }
 
     @Override
-    protected BookShop clone() throws CloneNotSupportedException {
-        BookShop bookShop = new BookShop();
-        bookShop.books.addAll(this.getBooks());
-        return bookShop;
+    public BookShop clone(){
+        BookShop newBookShop = new BookShop();
+        newBookShop.setBookList(this.getBookList());
+        return newBookShop;
     }
 }
